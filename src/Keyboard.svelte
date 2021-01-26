@@ -3,12 +3,15 @@
 	let key;
 	let keyCode;
 	let noValidInputs = [16, 8, 13, 16, 20, 37, 38, 39,]
+	let fullText = '';
 
 	function handleKeydown(event) {
 		key = event.key;
 		keyCode = event.keyCode;
 		if (keyCode !== 16 && keyCode !== 8 && keyCode !== 13 & keyCode !== 16 && keyCode !== 20 && keyCode !== 37 && keyCode !== 38 && keyCode !== 39 && keyCode !== 40 && keyCode !== 9 && keyCode !== 17 && keyCode !== 225 && keyCode !== 93 && keyCode !== 18 && keyCode !== 123) {
 			message.update(n => n += key)
+		} else if (keyCode === 8) {
+			message.update(n => n = n.substring(0, n.length - 1))
 		}
 	}
 </script>
